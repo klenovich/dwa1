@@ -5,6 +5,42 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">yeon</h1>
+    <h1 class="display-4">Yeon</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <h2>List of Items</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <h2>Submit a new Item</h2>
+    <form method="post" asp-action="CreateItem">
+        <div class="form-group">
+            <label for="itemName">Item Name</label>
+            <input type="text" class="form-control" id="itemName" name="Item.Name" />
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="Item.Description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>
