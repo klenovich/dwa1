@@ -17,3 +17,15 @@ public class IndexModel : PageModel
 
     }
 }
+
+public async Task<IActionResult> OnPostPerformTradeAsync(Trade trade)
+{
+    if (!ModelState.IsValid)
+    {
+        return Page();
+    }
+
+    // Add your logic for performing the trade here
+
+    return RedirectToPage();
+}
