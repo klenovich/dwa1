@@ -1,29 +1,29 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Stock Trading App";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Yeon</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to Yeon Stock Trading</h1>
+    <p>Trade smartly with <a href="https://docs.microsoft.com/aspnet/core">Yeon Stock Trading app built with ASP.NET Core</a>.</p>
 </div>
 
 <div>
-    <h2>List of Items</h2>
+    <h2>Available Stocks</h2>
     <table class="table">
         <thead>
             <tr>
-                <th>Item Name</th>
-                <th>Description</th>
+                <th>Ticker</th>
+                <th>Price</th>
             </tr>
         </thead>
         <tbody>
-            @foreach(var item in Model.Items)
+            @foreach(var stock in Model.Stocks)
             {
                 <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Description</td>
+                    <td>@stock.Name</td>
+                    <td>@stock.Price</td>
                 </tr>
             }
         </tbody>
@@ -31,16 +31,46 @@
 </div>
 
 <div>
-    <h2>Submit a new Item</h2>
-    <form method="post" asp-action="CreateItem">
+    <h2>Recent Trades</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Quantity</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var trade in Model.Trades)
+            {
+                <tr>
+                    <td>@trade.Ticker</td>
+                    <td>@trade.Quantity</td>
+                    <td>@trade.TradeType</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <h2>Perform a Trade</h2>
+    <form method="post" asp-action="PerformTrade">
         <div class="form-group">
-            <label for="itemName">Item Name</label>
-            <input type="text" class="form-control" id="itemName" name="Item.Name" />
+            <label for="ticker">Stock Ticker</label>
+            <input type="text" class="form-control" id="ticker" name="Trade.Ticker" />
         </div>
         <div class="form-group">
-            <label for="description">Description</label>
-            <textarea class="form-control" id="description" name="Item.Description"></textarea>
+            <label for="quantity">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="Trade.Quantity"/>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group">
+            <label for="tradeType">Trade Type</label>
+            <select class="form-control" id="tradeType" name="Trade.TradeType">
+                <option>Buy</option>
+                <option>Sell</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Trade</button>
     </form>
 </div>
