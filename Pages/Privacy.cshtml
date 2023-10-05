@@ -1,8 +1,45 @@
-﻿@page
+@page
 @model PrivacyModel
 @{
     ViewData["Title"] = "Privacy Policy";
+    Layout = "_Layout"; // Optionally, specify a shared layout page.
 }
+
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<p>Welcome to our Privacy Policy page. Here, we outline our commitment to protecting your personal information and ensuring your privacy while using our services.</p>
+
+<h2>1. Information We Collect</h2>
+<p>We may collect various types of information, including but not limited to:</p>
+<ul>
+    <li>Your name, email address, and contact information when you fill out forms or contact us.</li>
+    <li>Usage data, such as your IP address, browser type, and device information, for analytics and improving our services.</li>
+    <li>Cookies and similar technologies to enhance your browsing experience (you can manage cookie preferences in your browser).</li>
+</ul>
+
+<h2>2. How We Use Your Information</h2>
+<p>We use the collected information for the following purposes:</p>
+<ul>
+    <li>Providing and maintaining our services.</li>
+    <li>Communicating with you, responding to your inquiries, and providing customer support.</li>
+    <li>Improving our website and services based on user feedback and analytics.</li>
+</ul>
+
+<h2>3. Information Sharing</h2>
+<p>We respect your privacy, and we do not sell, trade, or otherwise transfer your information to third parties without your consent unless required by law.</p>
+
+<h2>4. Security</h2>
+<p>We take security seriously and implement reasonable measures to protect your data. However, please understand that no online data transmission is completely secure.</p>
+
+<h2>5. Your Choices</h2>
+<p>You have choices regarding your data:</p>
+<ul>
+    <li>You can opt out of receiving promotional emails from us by using the unsubscribe link provided in our emails.</li>
+    <li>You can disable cookies in your browser settings, but this may affect your experience on our website.</li>
+</ul>
+
+<h2>6. Changes to This Privacy Policy</h2>
+<p>We may update this privacy policy from time to time. Any changes will be posted on this page, and the date of the last update will be indicated.</p>
+
+<h2>7. Contact Us</h2>
+<p>If you have any questions, concerns, or requests regarding your privacy or this policy, please <a asp-page="/Contact">contact us</a>.</p>
